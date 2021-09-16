@@ -1,0 +1,21 @@
+[
+  {
+    "date": "16.09.2021",
+    "address": "ul. Kościuszki 227",
+    "timeStart": "9:30",
+    "timeEnd": "15:00",
+    "timeSum": "6:30",
+    "workDescription": "Koszenie trawy",
+    "receipt": 1200,
+    "invoice": null,
+    "employees": [
+      {
+        "name": "Szczepan",
+        "timeStart": "9:30",
+        "timeEnd": "15:00",
+        "timeSum": "6:30"
+      }
+    ],
+    "additionalCosts": 300
+  }
+]
