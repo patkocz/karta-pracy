@@ -1,0 +1,71 @@
+.header {
+  min-height: 6.5rem;
+  background-color: $light-green;
+  border-bottom-left-radius: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+
+  .header-content {
+    margin-bottom: 2.5rem;
+
+    .stats {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      margin-left: 2rem;
+
+      .stats-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        color: $text;
+
+        .stats-item-value {
+          font-weight: 700;
+        }
+
+        .stats-item-label {
+          font-weight: 400;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+.action-section {
+  height: 5rem;
+  background-color: $green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  left: 1rem;
+  right: 0;
+  bottom: -50%;
+
+  .add-btn {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: 2rem;
+    border: none;
+    background-color: $btn-background;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > h2 {
+    margin-left: 1rem;
+    color: white;
+  }
+}
