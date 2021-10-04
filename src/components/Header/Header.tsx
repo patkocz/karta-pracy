@@ -1,3 +1,5 @@
+import { Fab } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 import React from 'react';
 
 const iconPath = process.env.PUBLIC_URL +  '/svg/add_black_24dp.svg';
@@ -27,9 +29,12 @@ const Header = () => {
 
       <div className="action-section">
         <h2>40 000,00 zł</h2>
-        <button className="add-btn">
-          <img src={iconPath} />
-        </button>
+        {/* <button className="add-btn">
+          <img src={iconPath} alt="add item icon" />
+        </button> */}
+        <Fab color="primary" aria-label="add" className="add-btn">
+          <AddIcon />
+        </Fab>
       </div>
 
     </div>

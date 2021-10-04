@@ -7,28 +7,28 @@ export const Navigation = () => {
     <div className="navigation">
       <div className="navigation-item">
         <div className="navigation-item-icon">
-          <img src={iconPath} />
+          <img src={iconPath} alt="icon"/>
         </div>
         <div className="navigation-item-label">Klienci</div>
       </div>
 
       <div className="navigation-item">
         <div className="navigation-item-icon">
-        <img src={iconPath} />
+        <img src={iconPath} alt="icon" />
         </div>
         <div className="navigation-item-label">Klienci</div>
       </div>
 
       <div className="navigation-item">
         <div className="navigation-item-icon">
-        <img src={iconPath} />
+        <img src={iconPath} alt="icon" />
         </div>
         <div className="navigation-item-label">Klienci</div>
       </div>
 
       <div className="navigation-item">
         <div className="navigation-item-icon">
-        <img src={iconPath} />
+        <img src={iconPath} alt="icon" />
         </div>
         <div className="navigation-item-label">Klienci</div>
       </div>
