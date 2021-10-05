@@ -7,6 +7,18 @@ function App() {
     <div className="app">
       <Header />
       <Navigation />
+      <div className="worksheets">
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+        <div className="worksheets-card"></div>
+      </div>
     </div>
   );
 }
