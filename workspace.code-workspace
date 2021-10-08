@@ -1,0 +1,68 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.rulers": [
+			100
+		],
+		"editor.tabSize": 4,
+		"editor.formatOnType": true,
+		"editor.insertSpaces": false,
+		"editor.formatOnPaste": true,
+		"editor.detectIndentation": false,
+		// Files
+		"files.eol": "\n",
+		"files.trimFinalNewlines": true,
+		"files.insertFinalNewline": true,
+		"files.trimTrailingWhitespace": true,
+		// Git
+		"git.enabled": true,
+		"git.autofetch": true,
+		"git.countBadge": "all",
+		"git.autorefresh": true,
+		"git.confirmSync": false,
+		"git.checkoutType": "all",
+		"git.decorations.enabled": true,
+		"git.promptToSaveFilesBeforeCommit": "always",
+		// Javascript
+		"javascript.preferences.quoteStyle": "single",
+		"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+		"javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+		"javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+		// Search
+		"search.useIgnoreFiles": true,
+		// TsLint
+		"tslint.jsEnable": true,
+		// Typescript
+		"typescript.preferences.quoteStyle": "single",
+		"typescript.tsdk": "node_modules\\typescript\\lib",
+		"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+		"typescript.extension.sortImports.sortOnSave": true,
+		"typescript.extension.sortImports.sortMethod": "path",
+		"typescript.extension.sortImports.maxNamedImportsInSingleLine": 10,
+		"typescript.extension.sortImports.enableJavascript": true,
+		"typescript.extension.sortImports.pathSortOrder": [
+			"package",
+			"relativeUpLevel",
+			"relativeDownLevel"
+		],
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#2C2E30",
+			"titleBar.activeBackground": "#3D4043",
+			"titleBar.activeForeground": "#F9FAFA"
+		},
+		"editor.codeActionsOnSave": {
+			"source.fixAll": true
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"miclo.sort-typescript-imports",
+			"editorconfig.editorconfig",
+			"ms-vscode.vscode-typescript-tslint-plugin"
+		]
+	}
+}
