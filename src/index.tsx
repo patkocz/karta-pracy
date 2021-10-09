@@ -5,18 +5,18 @@ import App from './components/App';
 import './styles/index.scss';
 
 const theme = createTheme({
-  palette: {
-	primary: {
-	  main: '#1abc9c'
-	 }
-  }
+	palette: {
+		primary: {
+			main: '#1abc9c'
+		}
+	}
 })
 
 ReactDOM.render(
 	<React.StrictMode>
 		<ThemeProvider theme={theme}>
-	  		<App />
+			<App />
 		</ThemeProvider>
-  	</React.StrictMode>,
-  document.getElementById('root')
+	</React.StrictMode>,
+	document.getElementById('root')
 );
