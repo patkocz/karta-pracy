@@ -4,3 +4,5 @@
 // 	constructor(data?: IWorkCard) {
 // 	}
 // }
+
+export default {}
