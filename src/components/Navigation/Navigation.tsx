@@ -1,7 +1,7 @@
 import BusinessIcon from '@mui/icons-material/Business';
 import { Fab, Typography } from '@mui/material';
 import React from 'react';
-import { addWorkCard } from '../../firebase';
+import { addWorkCard } from '../../services/dataService';
 
 const iconPath = process.env.PUBLIC_URL + '/svg/business_black_24dp.svg';
 

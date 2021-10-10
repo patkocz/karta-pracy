@@ -1,18 +1,8 @@
 import AddIcon from '@mui/icons-material/Add';
 import { Fab } from '@mui/material';
 import React from 'react';
-import { getData } from '../../firebase';
-
-const iconPath = process.env.PUBLIC_URL + '/svg/add_black_24dp.svg';
 
 const Header = () => {
-
-	const onClick = async () => {
-		const data = await getData();
-
-		console.log(data);
-	}
-
 	return (
 		<div className="header">
 			<div className="header-content">
@@ -39,7 +29,7 @@ const Header = () => {
 				{/* <button className="add-btn">
           <img src={iconPath} alt="add item icon" />
         </button> */}
-				<Fab onClick={onClick} color="primary" aria-label="add" className="add-btn">
+				<Fab color="primary" aria-label="add" className="add-btn">
 					<AddIcon />
 				</Fab>
 			</div>

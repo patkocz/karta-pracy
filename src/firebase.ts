@@ -1,6 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { addDoc, collection, getDocs, getFirestore, Timestamp } from 'firebase/firestore/lite';
-import { IWorkCard } from './core/interfaces';
+import { getFirestore } from 'firebase/firestore/lite';
 
 const app = initializeApp({
 	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -11,32 +10,6 @@ const app = initializeApp({
 	appId: process.env.REACT_APP_FIREBASE_APP_ID,
 });
 
-export const db = getFirestore(app);
+const db = getFirestore(app);
 
-export const getData = async () => {
-	const testCol = collection(db, "users");
-	const usersSnapshot = await getDocs(testCol);
-	const usersList = usersSnapshot.docs.map((doc) => doc.data());
-
-	return usersList;
-};
-
-export const addWorkCard = async (data: IWorkCard) => {
-
-	try {
-
-
-		const ref = await addDoc<IWorkCard>(collection(db, 'workCards'), {
-			...data,
-			timestamp: Timestamp.now()
-		});
-
-		console.log(`document with id ${ref.id} was added`);
-
-		return ref;
-	} catch (error) {
-		console.log(error)
-	}
-}
-
-export default {};
+export default db
