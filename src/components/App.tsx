@@ -4,6 +4,7 @@ import { IWorkCard } from '../core/interfaces';
 import { getAllWorkCards } from '../services/dataService';
 import Header from './Header/Header';
 import { Navigation } from './Navigation/Navigation';
+import WorkCardForm from './WorkCardForm/WorkCardForm';
 
 function App() {
 	const [workCards, setWorkCards] = useState<Array<IWorkCard>>();
@@ -34,6 +35,9 @@ function App() {
 					</Route>
 					<Route path="/customers">
 						<h2>Klienci</h2>
+					</Route>
+					<Route path="/workcard/add">
+						<WorkCardForm />
 					</Route>
 					<Route path="/">
 						<div className="worksheets">

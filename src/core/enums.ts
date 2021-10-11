@@ -7,5 +7,6 @@ export enum DBDocument {
 export enum MainRoutes {
 	Home = "/",
 	Customers = '/customers',
-	Employees = '/employees'
+	Employees = '/employees',
+	AddWorkCard = '/workcard/add'
 }

@@ -2,7 +2,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import { DataContext } from './context/dataContext';
+import { StoreContextProvider } from './context/StoreContext';
 import './styles/index.scss';
 
 const theme = createTheme({
@@ -16,9 +16,9 @@ const theme = createTheme({
 ReactDOM.render(
 	<React.StrictMode>
 		<ThemeProvider theme={theme}>
-			<DataContext.Provider value={{}} >
+			<StoreContextProvider >
 				<App />
-			</DataContext.Provider>
+			</StoreContextProvider>
 		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root')

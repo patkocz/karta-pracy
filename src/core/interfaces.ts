@@ -52,3 +52,9 @@ export interface IDataService {
 	update(): void;
 	delete(): void;
 }
+
+export interface IAppState {
+	workCards?: IWorkCard;
+	customers?: ICustomer;
+	employees?: IEmployee;
+}
