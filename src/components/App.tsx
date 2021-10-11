@@ -1,5 +1,7 @@
+import { Box } from '@mui/system';
 import React, { useCallback, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { MainRoutes } from '../core/enums';
 import { IWorkCard } from '../core/interfaces';
 import { getAllWorkCards } from '../services/dataService';
 import Header from './Header/Header';
@@ -30,19 +32,42 @@ function App() {
 				<Navigation />
 
 				<Switch>
-					<Route path="/employees">
+					<Route path={MainRoutes.Employees}>
 						<h2>Pracownicy</h2>
 					</Route>
-					<Route path="/customers">
+					<Route path={MainRoutes.Employees}>
 						<h2>Klienci</h2>
 					</Route>
-					<Route path="/workcard/add">
+					<Route path={MainRoutes.AddWorkCard}>
 						<WorkCardForm />
 					</Route>
-					<Route path="/">
-						<div className="worksheets">
-							{workCards?.map((card, idx) => (<div key={idx} className="worksheets-card">{card?.customer?.name}</div>))}
-						</div>
+					<Route path={MainRoutes.Home}>
+						<Box
+							sx={{
+								'& :first-of-type': {
+									mt: 2
+								}
+							}}
+							className="worksheets"
+						>
+							{workCards?.map((card, idx) => (
+								<Box
+									sx={{
+										borderRadius: '4px',
+										boxShadow: 1,
+										height: 64,
+										bgcolor: "#fff",
+										width: '100%',
+										mb: 1,
+
+									}}
+									key={idx}
+								// className="worksheets-card"
+								>
+									{card?.customer?.name}
+								</Box>
+							))}
+						</Box>
 					</Route>
 				</Switch>
 			</Router>
