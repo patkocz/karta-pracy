@@ -9,6 +9,8 @@ export const InputWrapper = styled.div`
 	margin-bottom: 4px;
 	margin-right: 8px;
 
+
+
 	&:last-of-type {
 		margin-right: 0;
 	}
@@ -31,6 +33,7 @@ export const StyledInput = styled.input`
 	border: none;
 	width: 100%;
 	padding-left: 1px;
+	color: #555;
 
 	&:focus {
 		outline: none;
@@ -49,6 +52,8 @@ export const StyledTextarea = styled(TextField)`
 	width: fit-content;
 	padding-left: 1px;
 	border: none;
+
+
 
 	&.MuiTextField-root {
 		/* background-color: red; */
@@ -81,6 +86,13 @@ export const StyledBorder = styled.span`
 	text-align: center;
 	display: flex;
 	align-items: center;
+
+	box-sizing: border-box;
+
+	&:focus-within {
+		border-color: #1abc9c;
+		border-width: 2px
+	}
 `;
 
 export const TimeWrapper = styled.div`

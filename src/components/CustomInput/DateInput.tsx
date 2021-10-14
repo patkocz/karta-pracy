@@ -1,7 +1,7 @@
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import moment from 'moment';
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
+import DatePicker, { CalendarContainer } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styled from 'styled-components';
 import { InputOnChangeType, InputValueType } from '../../core/types';
@@ -23,6 +23,34 @@ const StyledDatePicker = styled(DatePicker)`
 	outline: none;
 `;
 
+interface ICalendarContainer {
+	className?: string;
+	children: React.ReactNode;
+};
+
+const CalendarContainerNew = (({ className, children }: ICalendarContainer) => {
+	return (
+		<CalendarContainer className={className}>
+			{children}
+		</CalendarContainer>
+	)
+});
+
+const styledCalendarContainer = styled(CalendarContainerNew)`
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 240px;
+`;
+
+const DisplayDate = styled.span`
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+`;
+
 export const DateInput = ({ ...props }: IProps) => {
 	const [startDate, setStartDate] = useState(new Date());
 	const [open, setOpen] = useState(false);
@@ -39,11 +67,12 @@ export const DateInput = ({ ...props }: IProps) => {
 			<InputLabel>Data</InputLabel>
 			<StyledBorder>
 				<CalendarTodayIcon />
-				<span>{moment(startDate).format("DD/MM/YYYY")}</span>
+				<DisplayDate>{moment(startDate).format("DD/MM/YYYY")}</DisplayDate>
 				{open && (
 					<StyledDatePicker
 						selected={startDate}
 						onChange={onDateChange}
+						calendarContainer={styledCalendarContainer}
 						inline
 					/>
 				)}

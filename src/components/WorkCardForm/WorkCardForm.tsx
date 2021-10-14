@@ -1,3 +1,5 @@
+import HomeIcon from '@mui/icons-material/Home';
+import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 import NoteAltIcon from '@mui/icons-material/NoteAlt';
 import PersonIcon from '@mui/icons-material/Person';
 import { Box, Button, TextField, TextFieldProps } from '@mui/material';
@@ -63,7 +65,7 @@ export default function WorkCardForm() {
 					<FormFieldsGroup>
 						<CustomInput
 							label="Adres"
-							Icon={<PersonIcon />}
+							Icon={<HomeIcon />}
 						/>
 					</FormFieldsGroup>
 
@@ -105,6 +107,13 @@ export default function WorkCardForm() {
 							<TimeInputTo />
 							<TimeTotal />
 						</TimeWrapper>
+					</FormFieldsGroup>
+
+					<FormFieldsGroup>
+						<CustomInput
+							label="Dodatkowe koszta"
+							Icon={<MoneyOffIcon />}
+						/>
 					</FormFieldsGroup>
 
 					<Button color="primary" variant="outlined" type="submit">Zapisz</Button>
