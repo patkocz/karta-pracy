@@ -170,6 +170,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-datepicker": "^4.1.7"
+    "@types/react-datepicker": "^4.1.7",
+    "@vercel/node": "^1.12.1"
   }
 }
