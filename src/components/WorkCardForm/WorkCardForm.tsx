@@ -1,7 +1,13 @@
+import NoteAltIcon from '@mui/icons-material/NoteAlt';
+import PersonIcon from '@mui/icons-material/Person';
 import { Box, Button, TextField, TextFieldProps } from '@mui/material';
-import { Field, Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import moment from 'moment';
 import React from 'react';
+import { FormFieldsGroup, TimeWrapper } from '../CustomInput/Common';
+import { CustomInput } from '../CustomInput/CustomInput';
+import { DateInput } from '../CustomInput/DateInput';
+import { TimeInputFrom, TimeInputTo, TimeTotal } from '../CustomInput/TimeInput';
 
 const CustomTextField = (props: TextFieldProps) => {
 	return (
@@ -33,6 +39,8 @@ export default function WorkCardForm() {
 		onSubmit: values => console.log(values)
 	})
 
+	// const x = () => <PersonIcon />;
+
 	return (
 		<div>
 			<Box sx={{
@@ -48,111 +56,56 @@ export default function WorkCardForm() {
 			>
 				<form onSubmit={formik.handleSubmit}>
 
-					<CustomTextField
-						sx={{
-							mb: 1
-						}}
-						variant="filled"
-						fullWidth
-						id="date"
-						name="date"
-						label="Data"
-						type="date"
-						value={formik.values.date}
-						defaultValue={formik.values.date}
-						onChange={formik.handleChange}
-						error={formik.touched.date && Boolean(formik.errors.date)}
-						helperText={formik.touched.date && formik.errors.date}
-					/>
+					<FormFieldsGroup>
+						<DateInput />
+					</FormFieldsGroup>
 
-					<CustomTextField
-						variant="filled"
-						fullWidth
-						id="customer.name"
-						name="customer.name"
-						label="Address"
-						type="text"
-						value={formik.values.customer.name}
-						onChange={formik.handleChange}
-						error={formik.touched.customer?.name && Boolean(formik.errors.customer?.name)}
-						helperText={formik.touched.customer?.name && formik.errors.customer?.name}
-					/>
-
-
-					<Box sx={{
-						display: "flex",
-						'& :first-child': {
-							mr: 1
-						}
-					}}>
-						<CustomTextField
-
-							variant="filled"
-							id="timeFrom"
-							name="timeFrom"
-							label="Godziny Od"
-							type="text"
-							value={formik.values.timeFrom}
-							onChange={formik.handleChange}
-							error={formik.touched.timeFrom && Boolean(formik.errors.timeFrom)}
-							helperText={formik.touched.timeFrom && formik.errors.timeFrom}
+					<FormFieldsGroup>
+						<CustomInput
+							label="Adres"
+							Icon={<PersonIcon />}
 						/>
+					</FormFieldsGroup>
 
-						<CustomTextField
-							id="timeTo"
-							name="timeTo"
-							label="Godziny Do"
-							type="text"
-							value={formik.values.timeTo}
-							onChange={formik.handleChange}
-							error={formik.touched.timeTo && Boolean(formik.errors.timeTo)}
-							helperText={formik.touched.timeTo && formik.errors.timeTo}
+					<FormFieldsGroup>
+						<CustomInput
+							label="Opis pracy"
+							Icon={<NoteAltIcon />}
+							type="textarea"
 						/>
-					</Box>
+					</FormFieldsGroup>
 
-					<CustomTextField
-						fullWidth
-						id="workDescription"
-						name="workDescription"
-						label="Opis Pracy"
-						type="text"
-						multiline
-						value={formik.values.workDescription}
-						onChange={formik.handleChange}
-						error={formik.touched.workDescription && Boolean(formik.errors.workDescription)}
-						helperText={formik.touched.workDescription && formik.errors.workDescription}
-					/>
+					<FormFieldsGroup>
+						<TimeWrapper >
+							<TimeInputFrom />
+							<TimeInputTo />
+							<TimeTotal />
+						</TimeWrapper>
+					</FormFieldsGroup>
 
-					<Box
-						sx={{
-							display: "flex",
-							'& :first-child': {
-								mr: 1
-							}
-						}}
-					>
-						<CustomTextField
-							id="receipt"
-							name="receipt"
-							label="Rachunek"
-							type="text"
-							value={formik.values.receipt}
-							onChange={formik.handleChange}
-							error={formik.touched.receipt && Boolean(formik.errors.receipt)}
-							helperText={formik.touched.receipt && formik.errors.receipt}
+					<FormFieldsGroup>
+						<CustomInput
+							label="Pracownik 1"
+							Icon={<PersonIcon />}
 						/>
+						<TimeWrapper >
+							<TimeInputFrom />
+							<TimeInputTo />
+							<TimeTotal />
+						</TimeWrapper>
+					</FormFieldsGroup>
 
-						<CustomTextField
-							id="invoice"
-							name="invoice"
-							label="Faktura"
-							type="text"
-							value={formik.values.invoice}
-							onChange={formik.handleChange}
-							error={formik.touched.invoice && Boolean(formik.errors.invoice)}
-							helperText={formik.touched.invoice && formik.errors.invoice}
+					<FormFieldsGroup>
+						<CustomInput
+							label="Pracownik 2"
+							Icon={<PersonIcon />}
 						/>
-					</Box>
+						<TimeWrapper >
+							<TimeInputFrom />
+							<TimeInputTo />
+							<TimeTotal />
+						</TimeWrapper>
+					</FormFieldsGroup>
 
 					<Button color="primary" variant="outlined" type="submit">Zapisz</Button>
 				</form>
