@@ -44,7 +44,13 @@ export default function WorkCardForm() {
 	// const x = () => <PersonIcon />;
 
 	return (
-		<div>
+		<Box
+			sx={{
+				display: 'flex',
+				alignItems: 'center',
+				flexDirection: 'column'
+			}}
+		>
 			<Box sx={{
 				fontSize: 24,
 				fontWeight: 700,
@@ -53,7 +59,8 @@ export default function WorkCardForm() {
 			}}>Nowa Karta Pracy</Box>
 			<Box
 				sx={{
-					m: 1
+					m: 1,
+					maxWidth: "320px"
 				}}
 			>
 				<form onSubmit={formik.handleSubmit}>
@@ -119,6 +126,6 @@ export default function WorkCardForm() {
 					<Button color="primary" variant="outlined" type="submit">Zapisz</Button>
 				</form>
 			</Box>
-		</div>
+		</Box>
 	)
 }

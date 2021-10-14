@@ -10,10 +10,12 @@ html {
 }
 
 body {
-  background-color: $page-background;
+  background-color: #efefef;
 }
 
 .app {
   margin: 0;
   padding: 0;
+  max-width: 320px;
+  background-color: $page-background;
 }
