@@ -128,7 +128,8 @@ export const SaveButton = styled.button`
 
 export const CancelButton = styled(SaveButton)`
 	background-color: #fff;
-	color: #1abc9c;
+	color: #555;
+	border-color: #555;
 	margin-right: 0.5rem;
 `;
 

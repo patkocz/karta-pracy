@@ -107,6 +107,19 @@ const WorkInfoValue = styled.div`
 	font-size: 0.8rem;
 `;
 
+const CircleButton = styled.button`
+	background: none;
+	border: 1px solid #555;
+	border-radius: 50%;
+	padding: 0.5rem;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+`;
+
 interface IProps {
 	data: IWorkCard;
 };
@@ -143,7 +156,9 @@ export const WorkCardListItem = ({ data }: IProps) => {
 
 				</Column>
 				<Column>
-					<KeyboardArrowDownRoundedIcon />
+					<CircleButton>
+						<KeyboardArrowDownRoundedIcon />
+					</CircleButton>
 				</Column>
 			</Row>
 		</WorkCardListItemWrapper>

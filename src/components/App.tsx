@@ -8,7 +8,7 @@ import Header from './Header/Header';
 import { Navigation } from './Navigation/Navigation';
 import { WorkCardList } from './WorkCard/WorkCardList';
 import { WorkCardListItem } from './WorkCard/WorkCardListItem';
-import WorkCardForm from './WorkCardForm/WorkCardForm';
+import { WorkCardForm } from './WorkCardForm/WorkCardForm';
 
 function App() {
 	const [workCards, setWorkCards] = useState<Array<IWorkCard>>();

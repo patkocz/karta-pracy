@@ -6,25 +6,29 @@ import { Box, Button, TextField, TextFieldProps } from '@mui/material';
 import { useFormik } from 'formik';
 import moment from 'moment';
 import React from 'react';
+import { useHistory } from 'react-router';
 import { CancelButton, FormButtonGroup, FormFieldsGroup, PaymentInputWrapper, SaveButton, TimeWrapper } from '../CustomInput/Common';
 import { CustomInput } from '../CustomInput/CustomInput';
 import { DateInput } from '../CustomInput/DateInput';
 import { InvoiceInputFrom, ReceiptInputFrom } from '../CustomInput/PaymentInput';
 import { TimeInputFrom, TimeInputTo, TimeTotal } from '../CustomInput/TimeInput';
 
-const CustomTextField = (props: TextFieldProps) => {
-	return (
-		<TextField
-			{...props}
-			sx={{
-				mb: 1
-			}}
-			variant="filled"
-		/>
-	)
-}
+// const CustomTextField = (props: TextFieldProps) => {
+// 	return (
+// 		<TextField
+// 			{...props}
+// 			sx={{
+// 				mb: 1
+// 			}}
+// 			variant="filled"
+// 		/>
+// 	)
+// }
 
-export default function WorkCardForm() {
+export const WorkCardForm = () => {
+	const history = useHistory();
+
+	const onClick = () => history.push('/');
 
 	const formik = useFormik({
 		initialValues: {
@@ -39,7 +43,7 @@ export default function WorkCardForm() {
 			invoice: '',
 
 		},
-		onSubmit: values => console.log(values)
+		onSubmit: onClick
 	})
 
 	return (
@@ -58,7 +62,11 @@ export default function WorkCardForm() {
 				fontWeight: 700,
 				// m: 1,
 				mb: 2,
-				mt: 3
+				mt: 3,
+				color: '#555;',
+				width: ' 100%',
+				borderBottom: '1px solid #555',
+				paddingBottom: '8px'
 			}}>Nowa Karta Pracy</Box>
 			<Box
 				sx={{
@@ -138,7 +146,7 @@ export default function WorkCardForm() {
 
 					{/* <Button color="primary" variant="outlined" type="submit">Zapisz</Button> */}
 					<FormButtonGroup>
-						<CancelButton>Anuluj</CancelButton>
+						<CancelButton onClick={onClick}>Anuluj</CancelButton>
 						<SaveButton type="submit">Zapisz</SaveButton>
 					</FormButtonGroup>
 				</form>
