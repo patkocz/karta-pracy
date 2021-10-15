@@ -1,6 +1,4 @@
-import HourglassBottom from '@mui/icons-material/HourglassBottom';
-import HourglassFull from '@mui/icons-material/HourglassFull';
-import HourglassTop from '@mui/icons-material/HourglassTop';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import React from 'react';
 import { InputOnChangeType, InputValueType } from '../../core/types';
 import { InputLabel, InputWrapper, StyledBorder, StyledInput, TimeInput } from './Common';
@@ -14,12 +12,12 @@ interface IProps {
 	type?: React.HTMLInputTypeAttribute;
 };
 
-export const TimeInputFrom = (props: IProps) => {
+export const ReceiptInputFrom = (props: IProps) => {
 	return (
 		<InputWrapper>
-			<InputLabel>Od</InputLabel>
+			<InputLabel>Rachunek</InputLabel>
 			<StyledBorder>
-				<HourglassTop />
+				<AttachMoneyIcon />
 				<TimeInput
 					{...props}
 				/>
@@ -29,28 +27,15 @@ export const TimeInputFrom = (props: IProps) => {
 };
 
 
-export const TimeInputTo = (props: IProps) => {
+export const InvoiceInputFrom = (props: IProps) => {
 	return (
 		<InputWrapper>
-			<InputLabel>Do</InputLabel>
+			<InputLabel>Faktura</InputLabel>
 			<StyledBorder>
-				<HourglassBottom />
+				<AttachMoneyIcon />
 				<TimeInput
 					{...props}
 				/>
-			</StyledBorder>
-		</InputWrapper>
-	);
-};
-
-
-export const TimeTotal = () => {
-	return (
-		<InputWrapper>
-			<InputLabel>Razem</InputLabel>
-			<StyledBorder>
-				<HourglassFull />
-				<TimeInput type="text" disabled />
 			</StyledBorder>
 		</InputWrapper>
 	);

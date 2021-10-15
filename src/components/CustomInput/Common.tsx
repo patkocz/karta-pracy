@@ -107,3 +107,36 @@ export const TimeWrapper = styled.div`
 export const FormFieldsGroup = styled.div`
 	margin-bottom: 8px;
 `;
+
+export const TimeInput = styled(StyledInput)`
+	/* max-width: 40px; */
+`;
+
+export const PaymentInputWrapper = styled(TimeWrapper)``;
+
+export const SaveButton = styled.button`
+	height: 40px;
+	border: 1px solid #1abc9c;
+	background-color: #1abc9c;
+	color: #fff;
+	padding: 5px 15px;
+	font-size: 16px;
+	border-radius: 4px;
+	max-width: 50%;
+	width: 100%;
+`;
+
+export const CancelButton = styled(SaveButton)`
+	background-color: #fff;
+	color: #1abc9c;
+	margin-right: 0.5rem;
+`;
+
+export const FormButtonGroup = styled.div`
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+`;
