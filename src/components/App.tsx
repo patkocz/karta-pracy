@@ -6,6 +6,8 @@ import { IWorkCard } from '../core/interfaces';
 import { getAllWorkCards } from '../services/dataService';
 import Header from './Header/Header';
 import { Navigation } from './Navigation/Navigation';
+import { WorkCardList } from './WorkCard/WorkCardList';
+import { WorkCardListItem } from './WorkCard/WorkCardListItem';
 import WorkCardForm from './WorkCardForm/WorkCardForm';
 
 function App() {
@@ -42,32 +44,14 @@ function App() {
 						<WorkCardForm />
 					</Route>
 					<Route path={MainRoutes.Home}>
-						<Box
-							sx={{
-								'& :first-of-type': {
-									mt: 2
-								}
-							}}
-							className="worksheets"
-						>
+						<WorkCardList>
 							{workCards?.map((card, idx) => (
-								<Box
-									sx={{
-										borderRadius: '4px',
-										boxShadow: 1,
-										height: 64,
-										bgcolor: "#fff",
-										width: '100%',
-										mb: 1,
-
-									}}
+								<WorkCardListItem
+									data={card}
 									key={idx}
-								// className="worksheets-card"
-								>
-									{card?.customer?.name}
-								</Box>
+								/>
 							))}
-						</Box>
+						</WorkCardList>
 					</Route>
 				</Switch>
 			</Router>
