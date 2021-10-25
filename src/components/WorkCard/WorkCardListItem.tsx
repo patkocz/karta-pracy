@@ -6,6 +6,7 @@ import moment from 'moment';
 import React from 'react';
 import styled from 'styled-components';
 import { IWorkCard } from '../../core/interfaces';
+import { getWorkCardById } from '../../services/dataService';
 
 const WorkCardListItemWrapper = styled.div`
 	display: flex;
@@ -125,6 +126,17 @@ interface IProps {
 };
 
 export const WorkCardListItem = ({ data }: IProps) => {
+	const onClickHandler = async () => {
+		if (data?.id) {
+			try {
+				const item = await getWorkCardById(data.id);
+				console.log(item);
+			} catch (error) {
+				console.log(error);
+			}
+		}
+	}
+
 	return (
 		<WorkCardListItemWrapper>
 			<Row>
@@ -156,7 +168,7 @@ export const WorkCardListItem = ({ data }: IProps) => {
 
 				</Column>
 				<Column>
-					<CircleButton>
+					<CircleButton onClick={onClickHandler}>
 						<KeyboardArrowDownRoundedIcon />
 					</CircleButton>
 				</Column>

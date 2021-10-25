@@ -1,11 +1,13 @@
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import moment from 'moment';
+import MobileDatePicker from '@mui/lab/MobileDatePicker';
+import { TextField } from '@mui/material';
 import React, { useState } from 'react';
 import DatePicker, { CalendarContainer } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styled from 'styled-components';
 import { InputOnChangeType, InputValueType } from '../../core/types';
-import { InputLabel, InputWrapper, StyledBorder, StyledInput } from './Common';
+// import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+// import moment from 'moment';
+// import { InputLabel, InputWrapper, StyledBorder, StyledInput } from './Common';
 
 interface IProps {
 	label?: string;
@@ -18,10 +20,17 @@ interface IProps {
 	type?: React.HTMLInputTypeAttribute;
 };
 
-const StyledDatePicker = styled(DatePicker)`
-	border: none;
-	outline: none;
+// const StyledDatePicker = styled(DatePicker)`
+// 	border: none;
+// 	outline: none;
+// `;
+
+const StyledDatePicker = styled(MobileDatePicker)`
+	/* border: none;
+	outline: none; */
+	width: 100%;
 `;
+
 
 interface ICalendarContainer {
 	className?: string;
@@ -56,6 +65,7 @@ export const DateInput = ({ ...props }: IProps) => {
 	const [open, setOpen] = useState(false);
 
 	const toggleOpen = () => setOpen(!open);
+
 	const onDateChange = (date: any) => {
 		if (date !== null && date instanceof Date) {
 			setStartDate(date)
@@ -63,21 +73,11 @@ export const DateInput = ({ ...props }: IProps) => {
 	}
 
 	return (
-		<InputWrapper onClick={toggleOpen}>
-			<InputLabel>Data</InputLabel>
-			<StyledBorder>
-				<CalendarTodayIcon />
-				<DisplayDate>{moment(startDate).format("DD/MM/YYYY")}</DisplayDate>
-				{open && (
-					<StyledDatePicker
-						selected={startDate}
-						onChange={onDateChange}
-						calendarContainer={styledCalendarContainer}
-						inline
-					/>
-				)}
-
-			</StyledBorder>
-		</InputWrapper>
+		<StyledDatePicker
+			label="Data"
+			value={startDate}
+			onChange={onDateChange}
+			renderInput={(params) => <TextField {...params} fullWidth />}
+		/>
 	);
 };

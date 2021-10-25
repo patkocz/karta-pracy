@@ -7,6 +7,7 @@ interface IDeletedItem {
 }
 
 export interface IWorkCard extends IDeletedItem {
+	id?: string;
 	date?: Date;
 	customer?: ICustomer;
 	timeStart?: ITime;
@@ -16,7 +17,7 @@ export interface IWorkCard extends IDeletedItem {
 	receipt?: Money;
 	invoice?: Money;
 	additionalCosts?: Money;
-	employess?: Array<IEmployee>
+	employess?: Array<IWorkCardEmployee>
 	timestamp?: Date;
 }
 
@@ -40,6 +41,10 @@ export interface ITime {
 export interface IEmployee extends IDeletedItem {
 	firstName: string;
 	lastName?: string;
+	timestamp?: Date;
+}
+
+export interface IWorkCardEmployee extends IEmployee {
 	timeStart?: ITime;
 	timeEnd?: ITime;
 	timeSum?: ITime;

@@ -16,6 +16,7 @@ function App() {
 	const fetchData = useCallback(async () => {
 		try {
 			const data = await getAllWorkCards();
+			console.log(data);
 			setWorkCards(data);
 		} catch (error) {
 			console.error(error);

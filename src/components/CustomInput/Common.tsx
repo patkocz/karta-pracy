@@ -99,23 +99,16 @@ export const TimeWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-width: 320px;
-	width: 100%;
-
 `;
 
 export const FormFieldsGroup = styled.div`
-	margin-bottom: 8px;
-`;
-
-export const TimeInput = styled(StyledInput)`
-	/* max-width: 40px; */
+	margin-bottom: 16px;
 `;
 
 export const PaymentInputWrapper = styled(TimeWrapper)``;
 
 export const SaveButton = styled.button`
-	height: 40px;
+	height: 56px;
 	border: 1px solid #1abc9c;
 	background-color: #1abc9c;
 	color: #fff;
@@ -124,6 +117,10 @@ export const SaveButton = styled.button`
 	border-radius: 4px;
 	max-width: 50%;
 	width: 100%;
+
+	&:hover {
+		cursor: pointer;
+	}
 `;
 
 export const CancelButton = styled(SaveButton)`
@@ -140,4 +137,13 @@ export const FormButtonGroup = styled.div`
 	justify-content: center;
 	margin-top: 2rem;
 	margin-bottom: 1rem;
+`;
+
+export const PaymentWrapper = styled.div`
+	display: flex;
+	justify-content: space-between;
+
+	/* &:first-child {
+		margin-right: 16px;
+	} */
 `;

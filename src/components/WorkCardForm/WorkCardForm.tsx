@@ -1,29 +1,17 @@
-import HomeIcon from '@mui/icons-material/Home';
-import MoneyOffIcon from '@mui/icons-material/MoneyOff';
-import NoteAltIcon from '@mui/icons-material/NoteAlt';
-import PersonIcon from '@mui/icons-material/Person';
-import { Box, Button, TextField, TextFieldProps } from '@mui/material';
+import { Box, TextField, TextFieldProps } from '@mui/material';
 import { useFormik } from 'formik';
 import moment from 'moment';
 import React from 'react';
 import { useHistory } from 'react-router';
-import { CancelButton, FormButtonGroup, FormFieldsGroup, PaymentInputWrapper, SaveButton, TimeWrapper } from '../CustomInput/Common';
-import { CustomInput } from '../CustomInput/CustomInput';
+import { CancelButton, FormButtonGroup, FormFieldsGroup, PaymentInputWrapper, PaymentWrapper, SaveButton, TimeWrapper } from '../CustomInput/Common';
 import { DateInput } from '../CustomInput/DateInput';
-import { InvoiceInputFrom, ReceiptInputFrom } from '../CustomInput/PaymentInput';
-import { TimeInputFrom, TimeInputTo, TimeTotal } from '../CustomInput/TimeInput';
-
-// const CustomTextField = (props: TextFieldProps) => {
-// 	return (
-// 		<TextField
-// 			{...props}
-// 			sx={{
-// 				mb: 1
-// 			}}
-// 			variant="filled"
-// 		/>
-// 	)
-// }
+// import HomeIcon from '@mui/icons-material/Home';
+// import MoneyOffIcon from '@mui/icons-material/MoneyOff';
+// import NoteAltIcon from '@mui/icons-material/NoteAlt';
+// import PersonIcon from '@mui/icons-material/Person';
+// import { CustomInput } from '../CustomInput/CustomInput';
+// import { InvoiceInputFrom, ReceiptInputFrom } from '../CustomInput/PaymentInput';
+// import { TimeInputFrom, TimeInputTo, TimeTotal } from '../CustomInput/TimeInput';
 
 export const WorkCardForm = () => {
 	const history = useHistory();
@@ -60,7 +48,6 @@ export const WorkCardForm = () => {
 			<Box sx={{
 				fontSize: 24,
 				fontWeight: 700,
-				// m: 1,
 				mb: 2,
 				mt: 3,
 				color: '#555;',
@@ -82,69 +69,134 @@ export const WorkCardForm = () => {
 					</FormFieldsGroup>
 
 					<FormFieldsGroup>
-						<CustomInput
+						<TextField
+							fullWidth
 							label="Adres"
-							Icon={<HomeIcon />}
 						/>
 					</FormFieldsGroup>
 
 					<FormFieldsGroup>
 						<TimeWrapper >
-							<TimeInputFrom />
-							<TimeInputTo />
-							<TimeTotal />
+							<TextField
+								fullWidth
+								label="Od"
+								sx={{
+									marginRight: '16px'
+								}}
+							/>
+							<TextField
+								fullWidth
+								label="Do"
+								sx={{
+									marginRight: '16px'
+								}}
+							/>
+							<TextField
+								fullWidth
+								disabled
+								label="Razem"
+							/>
 						</TimeWrapper>
 					</FormFieldsGroup>
 
 					<FormFieldsGroup>
-						<CustomInput
-							label="Opis pracy"
-							Icon={<NoteAltIcon />}
-							type="textarea"
+						<TextField
+							fullWidth
+							label="Opis"
+							minRows={3}
+							multiline
 						/>
 					</FormFieldsGroup>
 
 					<FormFieldsGroup>
-						<PaymentInputWrapper>
-							<ReceiptInputFrom />
-							<InvoiceInputFrom />
-						</PaymentInputWrapper>
+						<PaymentWrapper >
+							<TextField
+								fullWidth
+								label="Rachunek"
+								sx={
+									{
+										marginRight: '16px'
+									}
+								}
+							/>
+							<TextField
+								fullWidth
+								label="Faktura"
+							/>
+						</PaymentWrapper>
 					</FormFieldsGroup>
 
 
 
 					<FormFieldsGroup>
-						<CustomInput
+						<TextField
+							fullWidth
 							label="Pracownik 1"
-							Icon={<PersonIcon />}
+							sx={{
+								marginBottom: '8px'
+							}}
 						/>
 						<TimeWrapper >
-							<TimeInputFrom />
-							<TimeInputTo />
-							<TimeTotal />
+							<TextField
+								fullWidth
+								label="Od"
+								sx={{
+									marginRight: '16px'
+								}}
+							/>
+							<TextField
+								fullWidth
+								label="Do"
+								sx={{
+									marginRight: '16px'
+								}}
+							/>
+							<TextField
+								fullWidth
+								disabled
+								label="Razem"
+							/>
 						</TimeWrapper>
 					</FormFieldsGroup>
 
 					<FormFieldsGroup>
-						<CustomInput
+						<TextField
+							fullWidth
 							label="Pracownik 2"
-							Icon={<PersonIcon />}
+							sx={{
+								marginBottom: '8px'
+							}}
 						/>
 						<TimeWrapper >
-							<TimeInputFrom />
-							<TimeInputTo />
-							<TimeTotal />
+							<TextField
+								fullWidth
+								label="Od"
+								sx={{
+									marginRight: '16px'
+								}}
+							/>
+							<TextField
+								fullWidth
+								label="Do"
+								sx={{
+									marginRight: '16px'
+								}}
+							/>
+							<TextField
+								fullWidth
+								disabled
+								label="Razem"
+							/>
 						</TimeWrapper>
 					</FormFieldsGroup>
 
 					<FormFieldsGroup>
-						<CustomInput
+						<TextField
+							fullWidth
 							label="Dodatkowe koszta"
-							Icon={<MoneyOffIcon />}
 						/>
 					</FormFieldsGroup>
 
-					{/* <Button color="primary" variant="outlined" type="submit">Zapisz</Button> */}
 					<FormButtonGroup>
 						<CancelButton onClick={onClick}>Anuluj</CancelButton>
 						<SaveButton type="submit">Zapisz</SaveButton>
