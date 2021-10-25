@@ -1,3 +1,7 @@
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import RestoreIcon from '@mui/icons-material/Restore';
+import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useCallback, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -12,6 +16,7 @@ import { WorkCardForm } from './WorkCardForm/WorkCardForm';
 
 function App() {
 	const [workCards, setWorkCards] = useState<Array<IWorkCard>>();
+	const [value, setValue] = React.useState(0);
 
 	const fetchData = useCallback(async () => {
 		try {
@@ -55,6 +60,20 @@ function App() {
 						</WorkCardList>
 					</Route>
 				</Switch>
+
+				<Paper sx={{ position: 'fixed', bottom: 0, left: '50%', transform: 'translate(-50%,0)', maxWidth: '475px', width: '100%' }} elevation={3}>
+					<BottomNavigation
+						showLabels
+						value={value}
+						onChange={(event, newValue) => {
+							setValue(newValue);
+						}}
+					>
+						<BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+						<BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+						<BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+					</BottomNavigation>
+				</Paper>
 			</Router>
 		</div>
 	);
