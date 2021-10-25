@@ -22,6 +22,7 @@ export interface IWorkCard extends IDeletedItem {
 }
 
 export interface ICustomer extends IDeletedItem {
+	id?: string;
 	name: string;
 	address?: IAddress;
 }
@@ -42,6 +43,7 @@ export interface IEmployee extends IDeletedItem {
 	firstName: string;
 	lastName?: string;
 	timestamp?: Date;
+	id?: string;
 }
 
 export interface IWorkCardEmployee extends IEmployee {

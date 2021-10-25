@@ -1,4 +1,4 @@
-export enum DBDocument {
+export enum DocumentType {
 	WorkCard = 'workCards',
 	Customer = 'customers',
 	Employee = 'employees'
