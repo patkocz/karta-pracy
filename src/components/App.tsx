@@ -1,10 +1,11 @@
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import RestoreIcon from '@mui/icons-material/Restore';
-import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction, Paper, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useCallback, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
 import { MainRoutes } from '../core/enums';
 import { IWorkCard } from '../core/interfaces';
 import { getAllWorkCards } from '../services/dataService';
@@ -14,9 +15,15 @@ import { WorkCardList } from './WorkCard/WorkCardList';
 import { WorkCardListItem } from './WorkCard/WorkCardListItem';
 import { WorkCardForm } from './WorkCardForm/WorkCardForm';
 
+const StyledSearchForm = styled.form`
+	width: 100%;
+	display: flex;
+	margin-top: 16px;
+`
+
 function App() {
 	const [workCards, setWorkCards] = useState<Array<IWorkCard>>();
-	const [value, setValue] = React.useState(0);
+	// const [value, setValue] = React.useState(0);
 
 	const fetchData = useCallback(async () => {
 		try {
@@ -38,6 +45,22 @@ function App() {
 			<Router>
 				<Header />
 				<Navigation />
+
+				<Box sx={{
+					display: 'flex'
+				}}>
+					<StyledSearchForm  >
+						<TextField
+							placeholder="Szukaj..."
+							sx={{
+								marginRight: '16px',
+								marginLeft: '16px',
+								width: '100%',
+								borderRadius: '30px'
+							}}
+						/>
+					</StyledSearchForm>
+				</Box>
 
 				<Switch>
 					<Route path={MainRoutes.Employees}>
@@ -61,7 +84,15 @@ function App() {
 					</Route>
 				</Switch>
 
-				<Paper sx={{ position: 'fixed', bottom: 0, left: '50%', transform: 'translate(-50%,0)', maxWidth: '475px', width: '100%' }} elevation={3}>
+				{/* <Paper sx={{
+					position: 'fixed',
+					bottom: 0,
+					left: '50%',
+					transform: 'translate(-50%,0)',
+					maxWidth: '475px',
+					width: '100%',
+					zIndex: '999'
+				}} elevation={3}>
 					<BottomNavigation
 						showLabels
 						value={value}
@@ -69,11 +100,11 @@ function App() {
 							setValue(newValue);
 						}}
 					>
-						<BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-						<BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-						<BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+						<BottomNavigationAction label="Usuń" icon={<RestoreIcon />} />
+						<BottomNavigationAction label="Dodaj" icon={<FavoriteIcon />} />
+						<BottomNavigationAction label="Opcje" icon={<LocationOnIcon />} />
 					</BottomNavigation>
-				</Paper>
+				</Paper> */}
 			</Router>
 		</div>
 	);
